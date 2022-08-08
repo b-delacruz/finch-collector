@@ -1,11 +1,20 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+# Add UdpateView & DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Finch
 
 class FinchCreate(CreateView):
   model = Finch
   fields = '__all__'
+  success_url = '/finches/'
 
+class FinchUpdate(UpdateView):
+  model = Finch
+  fields = ['name', 'age']
+
+class FinchDelete(DeleteView):
+  model = Finch
+  success_url = '/cats/'
 
 # Define the home view
 def home(request):
