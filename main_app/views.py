@@ -14,7 +14,7 @@ class FinchUpdate(UpdateView):
 
 class FinchDelete(DeleteView):
   model = Finch
-  success_url = '/cats/'
+  success_url = '/finches/'
 
 # Define the home view
 def home(request):
